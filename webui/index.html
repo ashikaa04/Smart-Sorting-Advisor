@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Sorting Advisor</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 Smart Sorting Advisor</h1>
+    <p class="subtitle">Predict the most efficient sorting algorithm intelligently!</p>
+
+    <div class="button-group">
+      <button onclick="runAction('generate')">Generate Dataset</button>
+      <button onclick="runAction('label')">Label Dataset</button>
+      <button onclick="runAction('train')">Train Model</button>
+    </div>
+
+    <div class="test-section">
+      <h2>🧩 Test Array</h2>
+
+      <div class="input-group">
+        <input type="number" id="arraySize" placeholder="Enter random array size (e.g., 500)">
+        <button onclick="generateTestArray()">Generate Random Array</button>
+      </div>
+
+      <div class="input-group">
+        <input type="text" id="manualArray" placeholder="Enter custom array (e.g., 5,2,9,1,6)">
+        <button onclick="manualTestArray()">Submit Manual Array</button>
+      </div>
+
+      <button class="predict-btn" onclick="runAction('predict')">🔍 Predict Best Algorithm</button>
+    </div>
+
+    <div id="arrayDisplay" class="array-box hidden"></div>
+    <div id="output" class="output-box"></div>
+    <div id="algoInfo" class="algo-info hidden"></div>
+
+    <canvas id="chart" class="hidden" height="100"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
